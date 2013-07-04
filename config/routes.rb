@@ -1,6 +1,6 @@
 Demo::Application.routes.draw do
   resources :users
-  resources :microposts
+  resources :microposts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   get "users/new"
   match '/help',    to: 'static_pages#help',    via: 'get'
